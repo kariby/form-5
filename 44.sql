@@ -1,7 +1,7 @@
 /*  
-Ñòðîêà 5 - Âêëþ÷àåòñÿ ÷èñëî ëèö, ïîëó÷èâøèõ ðåâàêöèíàöèþ ïðîòèâ äèôòåðèè (ëþáîé èç òóðîâ RV1, RV2, RV3, RVn, RV) 
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 5 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð»Ð¸Ñ†, Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð²ÑˆÐ¸Ñ… Ñ€ÐµÐ²Ð°ÐºÑ†Ð¸Ð½Ð°Ñ†Ð¸ÑŽ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² Ð´Ð¸Ñ„Ñ‚ÐµÑ€Ð¸Ð¸ (Ð»ÑŽÐ±Ð¾Ð¹ Ð¸Ð· Ñ‚ÑƒÑ€Ð¾Ð² RV1, RV2, RV3, RVn, RV) 
 */
--- tab=Ñòðîêà 5
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 5
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -11,9 +11,9 @@ where (t.CODE = 2 or t.CODE = 46 or t.CODE = 47 or t.CODE = 181 or t.CODE = 484)
 and p.ENABLED = 1
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021');
 /*  
-Ñòðîêà 6 - Âêëþ÷àåòñÿ ÷èñëî äåòåé, ïîëó÷èâøèõ ðåâàêöèíàöèþ ïðîòèâ äèôòåðèè (ëþáîé èç òóðîâ RV1, RV2, RV3, RVn, RV) 
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 6 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð´ÐµÑ‚ÐµÐ¹, Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð²ÑˆÐ¸Ñ… Ñ€ÐµÐ²Ð°ÐºÑ†Ð¸Ð½Ð°Ñ†Ð¸ÑŽ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² Ð´Ð¸Ñ„Ñ‚ÐµÑ€Ð¸Ð¸ (Ð»ÑŽÐ±Ð¾Ð¹ Ð¸Ð· Ñ‚ÑƒÑ€Ð¾Ð² RV1, RV2, RV3, RVn, RV) 
 */
--- tab=Ñòðîêà 6
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 6
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -24,9 +24,9 @@ and p.ENABLED = 1
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021')
 and MONTHS_BETWEEN(SYSDATE, p.DATE_OF_BIRTH) / 12 < 18;
 /*  
-Ñòðîêà 12 - Âêëþ÷àåòñÿ ÷èñëî äåòåé, ïîëó÷èâøèõ ðåâàêöèíàöèþ ïðîòèâ ïîëèîìèåëèòà (ëþáîé èç òóðîâ RV1, RV2, RV3)
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 12 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð´ÐµÑ‚ÐµÐ¹, Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð²ÑˆÐ¸Ñ… Ñ€ÐµÐ²Ð°ÐºÑ†Ð¸Ð½Ð°Ñ†Ð¸ÑŽ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² Ð¿Ð¾Ð»Ð¸Ð¾Ð¼Ð¸ÐµÐ»Ð¸Ñ‚Ð° (Ð»ÑŽÐ±Ð¾Ð¹ Ð¸Ð· Ñ‚ÑƒÑ€Ð¾Ð² RV1, RV2, RV3)
 */
--- tab=Ñòðîêà 12
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 12
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -37,9 +37,9 @@ and p.ENABLED = 1
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021')
 and MONTHS_BETWEEN(SYSDATE, p.DATE_OF_BIRTH) / 12 < 18;
 /*
-Ñòðîêà 18 - Âêëþ÷àåòñÿ ÷èñëî äåòåé, ïîëó÷èâøèõ ðåâàêöèíàöèþ ïðîòèâ ýïèäåìè÷åñêîãî ïàðîòèòà (ëþáîé èç òóðîâ RV1, RV2, RV3)
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 18 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð´ÐµÑ‚ÐµÐ¹, Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð²ÑˆÐ¸Ñ… Ñ€ÐµÐ²Ð°ÐºÑ†Ð¸Ð½Ð°Ñ†Ð¸ÑŽ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² ÑÐ¿Ð¸Ð´ÐµÐ¼Ð¸Ñ‡ÐµÑÐºÐ¾Ð³Ð¾ Ð¿Ð°Ñ€Ð¾Ñ‚Ð¸Ñ‚Ð° (Ð»ÑŽÐ±Ð¾Ð¹ Ð¸Ð· Ñ‚ÑƒÑ€Ð¾Ð² RV1, RV2, RV3)
 */
--- tab=Ñòðîêà 18
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 18
 select count(distinct p.id) as count from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -49,9 +49,9 @@ where t.CODE = 181 and d.CODE = 32 and p.ENABLED = 1
 and MONTHS_BETWEEN(SYSDATE, p.DATE_OF_BIRTH) / 12 < 18
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021');
 /*
-Ñòðîêà 25 - Âêëþ÷àþòñÿ ÷èñëî íîâîðîæäåííûõ (äî ìåñÿöà), ïðèâèòûõ ïðîòèâ òóáåðêóëåçà (òóð V), à òàêæå ÷èñëî íîâîðîæäåííûõ, êîìó áûëà ñäåëàíà V èëè RV â çàäàííûé ïåðèîä
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 25 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÑŽÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð½Ð¾Ð²Ð¾Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð½Ñ‹Ñ… (Ð´Ð¾ Ð¼ÐµÑÑÑ†Ð°), Ð¿Ñ€Ð¸Ð²Ð¸Ñ‚Ñ‹Ñ… Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² Ñ‚ÑƒÐ±ÐµÑ€ÐºÑƒÐ»ÐµÐ·Ð° (Ñ‚ÑƒÑ€ V), Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð½Ð¾Ð²Ð¾Ñ€Ð¾Ð¶Ð´ÐµÐ½Ð½Ñ‹Ñ…, ÐºÐ¾Ð¼Ñƒ Ð±Ñ‹Ð»Ð° ÑÐ´ÐµÐ»Ð°Ð½Ð° V Ð¸Ð»Ð¸ RV Ð² Ð·Ð°Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´
 */
--- tab=Ñòðîêà 25
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 25
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -62,9 +62,9 @@ and MONTHS_BETWEEN(SYSDATE, p.DATE_OF_BIRTH) < 1
 and p.ENABLED = 1
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021');
 /*
-Ñòðîêà 44 - Âêëþ÷àåòñÿ ÷èñëî ëèö, ïîëó÷èâøèõ ðåâàêöèíàöèþ ïðîòèâ êëåùåâîãî ýíöåôàëèòà (ëþáîé èç òóðîâ RV1, RV2, RV3, RV4)
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 44 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð»Ð¸Ñ†, Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð²ÑˆÐ¸Ñ… Ñ€ÐµÐ²Ð°ÐºÑ†Ð¸Ð½Ð°Ñ†Ð¸ÑŽ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² ÐºÐ»ÐµÑ‰ÐµÐ²Ð¾Ð³Ð¾ ÑÐ½Ñ†ÐµÑ„Ð°Ð»Ð¸Ñ‚Ð° (Ð»ÑŽÐ±Ð¾Ð¹ Ð¸Ð· Ñ‚ÑƒÑ€Ð¾Ð² RV1, RV2, RV3, RV4)
 */
--- tab=Ñòðîêà 44
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 44
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -74,9 +74,9 @@ where (t.CODE = 2 or t.CODE = 46 or t.CODE = 47 or t.CODE = 48) and d.CODE = 35
 and p.ENABLED = 1
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021');
 /*
-Ñòðîêà 45 - Âêëþ÷àåòñÿ ÷èñëî äåòåé, ïîëó÷èâøèõ ðåâàêöèíàöèþ ïðîòèâ êëåùåâîãî ýíöåôàëèòà (ëþáîé èç òóðîâ RV1, RV2, RV3, RV4)
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 45 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð´ÐµÑ‚ÐµÐ¹, Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð²ÑˆÐ¸Ñ… Ñ€ÐµÐ²Ð°ÐºÑ†Ð¸Ð½Ð°Ñ†Ð¸ÑŽ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² ÐºÐ»ÐµÑ‰ÐµÐ²Ð¾Ð³Ð¾ ÑÐ½Ñ†ÐµÑ„Ð°Ð»Ð¸Ñ‚Ð° (Ð»ÑŽÐ±Ð¾Ð¹ Ð¸Ð· Ñ‚ÑƒÑ€Ð¾Ð² RV1, RV2, RV3, RV4)
 */
--- tab=Ñòðîêà 45
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 45
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -87,9 +87,9 @@ and p.ENABLED = 1
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021')
 and MONTHS_BETWEEN(SYSDATE, p.DATE_OF_BIRTH) / 12 < 18;
 /*
-Ñòðîêà 50 - Âêëþ÷àåòñÿ ÷èñëî ëèö, ïîëó÷èâøèõ ðåâàêöèíàöèþ ïðîòèâ ãåìîôèëüíîé èíôåêöèè (ëþáîé èç òóðîâ RV è RV1)
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 50 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð»Ð¸Ñ†, Ð¿Ð¾Ð»ÑƒÑ‡Ð¸Ð²ÑˆÐ¸Ñ… Ñ€ÐµÐ²Ð°ÐºÑ†Ð¸Ð½Ð°Ñ†Ð¸ÑŽ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð² Ð³ÐµÐ¼Ð¾Ñ„Ð¸Ð»ÑŒÐ½Ð¾Ð¹ Ð¸Ð½Ñ„ÐµÐºÑ†Ð¸Ð¸ (Ð»ÑŽÐ±Ð¾Ð¹ Ð¸Ð· Ñ‚ÑƒÑ€Ð¾Ð² RV Ð¸ RV1)
 */
--- tab=Ñòðîêà 50
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 50
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
@@ -99,9 +99,9 @@ where (t.CODE = 2 or t.CODE = 181) and d.CODE = 40
 and p.ENABLED = 1
 and v.INJECT_AT >=('01.01.2019') and v.INJECT_AT <=to_date('12.05.2021');
 /*
-Ñòðîêà 54 - Âêëþ÷àåòñÿ ÷èñëî äåòåé, êîìó áûëà ñäåëàíà V2 â çàäàííûé ïåðèîä, à òàêæå ÷èñëî äåòåé, êîìó áûëà ñäåëàíà V1 ïðè óñëîâèè, ÷òî ïàöèåíòó áîëüøå 2 ëåò (íà òåêóùèé ìîìåíò)
+Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 54 - Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÑ‚ÑÑ Ñ‡Ð¸ÑÐ»Ð¾ Ð´ÐµÑ‚ÐµÐ¹, ÐºÐ¾Ð¼Ñƒ Ð±Ñ‹Ð»Ð° ÑÐ´ÐµÐ»Ð°Ð½Ð° V2 Ð² Ð·Ð°Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ð¿ÐµÑ€Ð¸Ð¾Ð´, Ð° Ñ‚Ð°ÐºÐ¶Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð´ÐµÑ‚ÐµÐ¹, ÐºÐ¾Ð¼Ñƒ Ð±Ñ‹Ð»Ð° ÑÐ´ÐµÐ»Ð°Ð½Ð° V1 Ð¿Ñ€Ð¸ ÑƒÑÐ»Ð¾Ð²Ð¸Ð¸, Ñ‡Ñ‚Ð¾ Ð¿Ð°Ñ†Ð¸ÐµÐ½Ñ‚Ñƒ Ð±Ð¾Ð»ÑŒÑˆÐµ 2 Ð»ÐµÑ‚ (Ð½Ð° Ñ‚ÐµÐºÑƒÑ‰Ð¸Ð¹ Ð¼Ð¾Ð¼ÐµÐ½Ñ‚)
 */
--- tab=Ñòðîêà 54
+-- tab=Ð¡Ñ‚Ñ€Ð¾ÐºÐ° 54
 select count(distinct p.id) from PACIENTS p
 inner join VACCINE_CARDS vc on p.ID = vc.PACIENT_ID and vc.ENABLED = 1
 inner join VACCINATIONS v on vc.ID = v.VACCINE_CARD_ID and v.ENABLED = 1 and v.APPLY_COMPANY_ID = 139
